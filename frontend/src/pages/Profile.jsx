@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import API from "../services/api";
+import API, { FILE_BASE_URL } from "../services/api";
 import { useToast } from "../context/ToastContext";
 
 function Profile() {
@@ -145,7 +145,7 @@ function Profile() {
               <div className="jp-avatar-upload">
                 {profile.profilePhoto ? (
                   <img
-                    src={`http://localhost:5000/${profile.profilePhoto}`}
+                    src={`${FILE_BASE_URL}/${profile.profilePhoto}`}
                     alt="Profile"
                     className="jp-avatar-photo"
                     style={{ cursor: "pointer" }}
@@ -283,7 +283,7 @@ function Profile() {
             onClick={(e) => e.stopPropagation()}
           >
             <img
-              src={`http://localhost:5000/${profile.profilePhoto}`}
+              src={`${FILE_BASE_URL}/${profile.profilePhoto}`}
               alt="Profile large preview"
               className="jp-photo-preview-img"
             />

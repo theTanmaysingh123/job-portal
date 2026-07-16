@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import API from "../services/api";
+import API, { FILE_BASE_URL } from "../services/api";
 import { useToast } from "../context/ToastContext";
 import ConfirmModal from "../components/ConfirmModal";
 
@@ -220,7 +220,7 @@ function MyJobs() {
   const resumeUrl = (resume) => {
     if (!resume) return "";
     const cleanPath = resume.startsWith("uploads/") ? resume : `uploads/${resume}`;
-    return `http://localhost:5000/${cleanPath}`;
+    return `${FILE_BASE_URL}/${cleanPath}`;
   };
 
   const statusBadgeClass = (status) => {

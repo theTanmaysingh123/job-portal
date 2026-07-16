@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, useLocation, useNavigate } from "react-router-dom";
-import API from "../services/api";
+import API, { FILE_BASE_URL } from "../services/api";
 import { useToast } from "../context/ToastContext";
 
 function ApplicationDetail() {
@@ -217,7 +217,7 @@ function ApplicationDetail() {
             {application.resume && (
               <div className="mt-4 pt-3" style={{ borderTop: "1px solid var(--jp-border)" }}>
                 <a
-                  href={`http://localhost:5000/${
+                  href={`${FILE_BASE_URL}/${
                     application.resume.startsWith("uploads/")
                       ? application.resume
                       : `uploads/${application.resume}`
