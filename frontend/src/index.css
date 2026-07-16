@@ -1,0 +1,193 @@
+/* ==========================================================================
+   Job Portal — Global Design Tokens & Base Styles
+   Theme: Blue / White / Dark (Navy)
+   ========================================================================== */
+
+:root {
+  /* Brand palette */
+  --jp-blue: #1656d9;
+  --jp-blue-dark: #0d3faa;
+  --jp-navy: #0a1b3d;
+  --jp-navy-2: #0f2a5c;
+  --jp-blue-tint: #eaf1ff;
+  --jp-blue-tint-2: #dce8ff;
+
+  /* Neutrals */
+  --jp-ink: #101828;
+  --jp-slate: #5a6473;
+  --jp-slate-light: #8b93a1;
+  --jp-border: #e6e9f0;
+  --jp-surface: #ffffff;
+  --jp-bg: #f5f7fb;
+
+  /* Status */
+  --jp-success: #17a06d;
+  --jp-success-bg: #e6f7f0;
+  --jp-danger: #e0393e;
+  --jp-danger-bg: #fdeceb;
+  --jp-warning: #d98a10;
+  --jp-warning-bg: #fdf3e2;
+
+  /* Elevation */
+  --jp-shadow-sm: 0 1px 3px rgba(10, 27, 61, 0.06), 0 1px 2px rgba(10, 27, 61, 0.04);
+  --jp-shadow-md: 0 8px 24px rgba(10, 27, 61, 0.08), 0 2px 6px rgba(10, 27, 61, 0.05);
+  --jp-shadow-lg: 0 20px 45px rgba(10, 27, 61, 0.14), 0 4px 12px rgba(10, 27, 61, 0.06);
+
+  /* Radius */
+  --jp-radius-sm: 10px;
+  --jp-radius-md: 16px;
+  --jp-radius-lg: 22px;
+
+  /* Type */
+  --jp-font-display: "Poppins", system-ui, -apple-system, sans-serif;
+  --jp-font-body: "Inter", system-ui, -apple-system, sans-serif;
+
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--jp-font-body);
+  color: var(--jp-ink);
+  background: var(--jp-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--jp-font-display);
+  color: var(--jp-navy);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+p {
+  color: var(--jp-slate);
+  margin-bottom: 0.5rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Focus visibility for accessibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--jp-blue);
+  outline-offset: 2px;
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ==========================================================================
+   Utility Classes
+   ========================================================================== */
+
+.text-navy { color: var(--jp-navy) !important; }
+.text-brand { color: var(--jp-blue) !important; }
+.bg-brand { background-color: var(--jp-blue) !important; }
+.bg-navy { background-color: var(--jp-navy) !important; }
+.bg-blue-tint { background-color: var(--jp-blue-tint) !important; }
+
+.fw-display {
+  font-family: var(--jp-font-display);
+}
+
+.section-py {
+  padding-top: 4.5rem;
+  padding-bottom: 4.5rem;
+}
+
+@media (max-width: 768px) {
+  .section-py {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--jp-font-display);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--jp-blue);
+  background: var(--jp-blue-tint);
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+}
+
+/* ==========================================================================
+   Animations
+   ========================================================================== */
+
+@keyframes jp-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes jp-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes jp-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes jp-pulse-ring {
+  0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.35); }
+  100% { box-shadow: 0 0 0 14px rgba(255, 255, 255, 0); }
+}
+
+.jp-animate-up {
+  animation: jp-fade-up 0.6s ease both;
+}
+
+.jp-animate-in {
+  animation: jp-fade-in 0.6s ease both;
+}
+
+.jp-delay-1 { animation-delay: 0.1s; }
+.jp-delay-2 { animation-delay: 0.2s; }
+.jp-delay-3 { animation-delay: 0.3s; }
+.jp-delay-4 { animation-delay: 0.4s; }
+
+.jp-float {
+  animation: jp-float 4.5s ease-in-out infinite;
+}

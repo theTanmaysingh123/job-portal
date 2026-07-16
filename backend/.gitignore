@@ -1,0 +1,8 @@
+node_modules
+.env
+
+# Uploaded resumes/photos are user-generated at runtime — don't commit them,
+# but keep the folder itself tracked via .gitkeep so the app doesn't crash
+# on a fresh clone (multer expects this folder to already exist).
+uploads/*
+!uploads/.gitkeep

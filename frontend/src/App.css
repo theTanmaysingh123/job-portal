@@ -1,0 +1,1179 @@
+/* ==========================================================================
+   Job Portal — Component Styles
+   ========================================================================== */
+
+.app-main {
+  flex: 1 1 auto;
+}
+
+/* --------------------------------------------------------------------------
+   Navbar
+   -------------------------------------------------------------------------- */
+
+.jp-navbar {
+  background: var(--jp-navy);
+  padding: 0.7rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.jp-navbar .navbar-brand {
+  font-family: var(--jp-font-display);
+  font-weight: 700;
+  font-size: 1.35rem;
+  color: #fff !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.jp-navbar .navbar-brand .brand-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--jp-blue), #4f8cff);
+  color: #fff;
+  font-size: 1.05rem;
+}
+
+.jp-navbar .nav-link {
+  color: rgba(255, 255, 255, 0.78) !important;
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 0.5rem 0.9rem !important;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.jp-navbar .nav-link:hover,
+.jp-navbar .nav-link.active {
+  color: #fff !important;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.jp-navbar .navbar-toggler {
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #fff;
+}
+
+.jp-navbar .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.9)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.jp-navbar .navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.btn-jp-primary {
+  background: var(--jp-blue);
+  border: 1px solid var(--jp-blue);
+  color: #fff;
+  font-weight: 600;
+  border-radius: var(--jp-radius-sm);
+  padding: 0.55rem 1.3rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.btn-jp-primary:hover {
+  background: var(--jp-blue-dark);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: var(--jp-shadow-md);
+}
+
+.btn-jp-outline {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #fff;
+  font-weight: 600;
+  border-radius: var(--jp-radius-sm);
+  padding: 0.55rem 1.3rem;
+  transition: all 0.15s ease;
+}
+
+.btn-jp-outline:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.6);
+  transform: translateY(-2px);
+}
+
+.btn-jp-danger {
+  background: var(--jp-danger-bg);
+  color: var(--jp-danger);
+  border: 1px solid transparent;
+  font-weight: 600;
+  border-radius: var(--jp-radius-sm);
+  transition: all 0.15s ease;
+}
+
+.btn-jp-danger:hover {
+  background: var(--jp-danger);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+/* Generic animated button lift, used across the app */
+.btn-lift {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--jp-shadow-md);
+}
+
+/* --------------------------------------------------------------------------
+   Hero (Home page)
+   -------------------------------------------------------------------------- */
+
+.jp-hero {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(125deg, var(--jp-navy) 0%, var(--jp-navy-2) 46%, var(--jp-blue) 100%);
+  color: #fff;
+  padding: 5.5rem 0 7rem;
+}
+
+.jp-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 15% 20%, rgba(255, 255, 255, 0.08) 0, transparent 45%),
+    radial-gradient(circle at 85% 75%, rgba(79, 140, 255, 0.25) 0, transparent 50%);
+  pointer-events: none;
+}
+
+.jp-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #dce8ff;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  backdrop-filter: blur(6px);
+}
+
+.jp-hero h1 {
+  color: #fff;
+  font-size: clamp(2.1rem, 4vw, 3.4rem);
+  line-height: 1.12;
+}
+
+.jp-hero .lead {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 1.15rem;
+  max-width: 560px;
+}
+
+.jp-hero-search {
+  background: #fff;
+  border-radius: var(--jp-radius-lg);
+  box-shadow: var(--jp-shadow-lg);
+  padding: 0.85rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.jp-hero-search .form-control {
+  border: none;
+  background: transparent;
+  font-size: 0.95rem;
+}
+
+.jp-hero-search .form-control:focus {
+  box-shadow: none;
+}
+
+.jp-hero-search .divider {
+  width: 1px;
+  background: var(--jp-border);
+  margin: 0.4rem 0;
+}
+
+.jp-hero-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1.1rem;
+}
+
+.jp-hero-chips .chip {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+}
+
+.jp-hero-visual {
+  position: relative;
+  z-index: 1;
+}
+
+.jp-floating-card {
+  position: absolute;
+  background: #fff;
+  border-radius: var(--jp-radius-md);
+  box-shadow: var(--jp-shadow-lg);
+  padding: 0.9rem 1.1rem;
+  color: var(--jp-ink);
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.jp-floating-card .icon-box {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Section headers
+   -------------------------------------------------------------------------- */
+
+.section-title {
+  font-size: clamp(1.6rem, 2.6vw, 2.1rem);
+  font-weight: 700;
+}
+
+.section-subtitle {
+  color: var(--jp-slate);
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+/* --------------------------------------------------------------------------
+   Stat / Feature cards
+   -------------------------------------------------------------------------- */
+
+.jp-card {
+  background: var(--jp-surface);
+  border: 1px solid var(--jp-border);
+  border-radius: var(--jp-radius-md);
+  box-shadow: var(--jp-shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.jp-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--jp-shadow-md);
+}
+
+.jp-stat-card {
+  padding: 1.75rem 1.25rem;
+  text-align: center;
+}
+
+.jp-stat-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 0.9rem;
+}
+
+.jp-stat-number {
+  font-family: var(--jp-font-display);
+  font-weight: 800;
+  font-size: 2.1rem;
+  color: var(--jp-navy);
+}
+
+.jp-feature {
+  padding: 2rem 1.5rem;
+  text-align: center;
+  height: 100%;
+}
+
+.jp-feature-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.7rem;
+  margin-bottom: 1.1rem;
+}
+
+/* --------------------------------------------------------------------------
+   Company logos strip
+   -------------------------------------------------------------------------- */
+
+.jp-company-pill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: var(--jp-surface);
+  border: 1px solid var(--jp-border);
+  border-radius: var(--jp-radius-sm);
+  padding: 1rem 0.75rem;
+  font-family: var(--jp-font-display);
+  font-weight: 600;
+  color: var(--jp-navy);
+  height: 100%;
+  transition: all 0.2s ease;
+}
+
+.jp-company-pill:hover {
+  border-color: var(--jp-blue);
+  box-shadow: var(--jp-shadow-sm);
+  transform: translateY(-2px);
+}
+
+/* --------------------------------------------------------------------------
+   Footer
+   -------------------------------------------------------------------------- */
+
+.jp-footer {
+  background: var(--jp-navy);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.jp-footer h5,
+.jp-footer h6 {
+  color: #fff;
+}
+
+.jp-footer a {
+  color: rgba(255, 255, 255, 0.65);
+  transition: color 0.15s ease;
+}
+
+.jp-footer a:hover {
+  color: #fff;
+}
+
+.jp-footer .social-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.jp-footer .social-icon:hover {
+  background: var(--jp-blue);
+  transform: translateY(-2px);
+}
+
+/* --------------------------------------------------------------------------
+   Auth pages (Login / Register)
+   -------------------------------------------------------------------------- */
+
+.jp-auth-wrapper {
+  min-height: calc(100vh - 68px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--jp-navy) 0%, var(--jp-blue) 120%);
+  padding: 3rem 1rem;
+}
+
+.jp-auth-card {
+  background: #fff;
+  border-radius: var(--jp-radius-lg);
+  box-shadow: var(--jp-shadow-lg);
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 460px;
+}
+
+.jp-auth-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+  background: var(--jp-blue-tint);
+  color: var(--jp-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  margin: 0 auto 1rem;
+}
+
+.jp-input-group {
+  border: 1px solid var(--jp-border);
+  border-radius: var(--jp-radius-sm);
+  overflow: hidden;
+  background: #fff;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.jp-input-group:focus-within {
+  border-color: var(--jp-blue);
+  box-shadow: 0 0 0 3px var(--jp-blue-tint);
+}
+
+.jp-input-group .input-group-text {
+  background: #fff;
+  border: none;
+  color: var(--jp-slate-light);
+}
+
+.jp-input-group .form-control {
+  border: none;
+  padding: 0.7rem 0.5rem;
+}
+
+.jp-input-group .form-control:focus {
+  box-shadow: none;
+}
+
+.jp-role-card {
+  border: 2px solid var(--jp-border);
+  border-radius: var(--jp-radius-md);
+  padding: 1.1rem 0.75rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  background: #fff;
+}
+
+.jp-role-card:hover {
+  border-color: var(--jp-blue-tint-2);
+  background: var(--jp-blue-tint);
+}
+
+.jp-role-card.active {
+  border-color: var(--jp-blue);
+  background: var(--jp-blue-tint);
+  box-shadow: var(--jp-shadow-sm);
+}
+
+.jp-role-card .role-icon {
+  font-size: 1.6rem;
+  color: var(--jp-slate-light);
+  margin-bottom: 0.4rem;
+}
+
+.jp-role-card.active .role-icon {
+  color: var(--jp-blue);
+}
+
+/* --------------------------------------------------------------------------
+   Dashboard
+   -------------------------------------------------------------------------- */
+
+.jp-welcome-banner {
+  background: linear-gradient(120deg, var(--jp-navy), var(--jp-blue));
+  color: #fff;
+  border-radius: var(--jp-radius-lg);
+  padding: 2rem 2.25rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.jp-welcome-banner::after {
+  content: "";
+  position: absolute;
+  right: -40px;
+  top: -60px;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  pointer-events: none;
+}
+
+.jp-role-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 0.3rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.jp-dash-stat {
+  border-radius: var(--jp-radius-md);
+  padding: 1.5rem;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.jp-dash-stat:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--jp-shadow-md);
+}
+
+.jp-dash-stat .stat-icon {
+  font-size: 1.7rem;
+  opacity: 0.9;
+}
+
+.jp-dash-stat .stat-value {
+  font-family: var(--jp-font-display);
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.jp-stat-clickable {
+  cursor: pointer;
+}
+
+.jp-stat-clickable:active {
+  transform: translateY(-1px);
+}
+
+.jp-stat-arrow {
+  position: absolute;
+  bottom: 0.9rem;
+  right: 1rem;
+  font-size: 1.1rem;
+  opacity: 0.55;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.jp-stat-clickable:hover .jp-stat-arrow {
+  opacity: 1;
+  transform: translateX(3px);
+}
+
+.jp-quick-action {
+  border: 1px solid var(--jp-border);
+  background: #fff;
+  border-radius: var(--jp-radius-sm);
+  padding: 0.65rem 1.2rem;
+  font-weight: 600;
+  color: var(--jp-navy);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.15s ease;
+}
+
+.jp-quick-action:hover {
+  border-color: var(--jp-blue);
+  color: var(--jp-blue);
+  background: var(--jp-blue-tint);
+  transform: translateY(-2px);
+}
+
+/* --------------------------------------------------------------------------
+   Badges (shared)
+   -------------------------------------------------------------------------- */
+
+.jp-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+}
+
+.jp-badge-blue { background: var(--jp-blue-tint); color: var(--jp-blue); }
+.jp-badge-slate { background: #eef0f4; color: var(--jp-slate); }
+.jp-badge-success { background: var(--jp-success-bg); color: var(--jp-success); }
+.jp-badge-danger { background: var(--jp-danger-bg); color: var(--jp-danger); }
+.jp-badge-warning { background: var(--jp-warning-bg); color: var(--jp-warning); }
+
+/* --------------------------------------------------------------------------
+   Job cards (Jobs page / My Jobs)
+   -------------------------------------------------------------------------- */
+
+.jp-job-card {
+  background: #fff;
+  border: 1px solid var(--jp-border);
+  border-radius: var(--jp-radius-md);
+  box-shadow: var(--jp-shadow-sm);
+  padding: 1.6rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.jp-job-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--jp-shadow-md);
+  border-color: var(--jp-blue-tint-2);
+}
+
+.jp-company-logo {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background: var(--jp-blue-tint);
+  color: var(--jp-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--jp-font-display);
+  font-weight: 700;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.jp-job-title {
+  font-size: 1.15rem;
+  margin-bottom: 0.15rem;
+}
+
+.jp-job-company {
+  color: var(--jp-slate);
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+.jp-job-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.85rem 0;
+}
+
+.jp-resume-drop {
+  border: 1.5px dashed var(--jp-border);
+  border-radius: var(--jp-radius-sm);
+  padding: 0.85rem 1rem;
+  background: var(--jp-bg);
+}
+
+.jp-resume-drop input[type="file"] {
+  font-size: 0.85rem;
+}
+
+.btn-apply {
+  background: var(--jp-blue);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  border-radius: var(--jp-radius-sm);
+  padding: 0.6rem 1.5rem;
+  transition: all 0.15s ease;
+}
+
+.btn-apply:hover {
+  background: var(--jp-blue-dark);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: var(--jp-shadow-md);
+}
+
+/* --------------------------------------------------------------------------
+   Applicant cards (My Jobs)
+   -------------------------------------------------------------------------- */
+
+.jp-applicant-card {
+  background: var(--jp-bg);
+  border: 1px solid var(--jp-border);
+  border-radius: var(--jp-radius-sm);
+  padding: 1rem 1.15rem;
+  transition: box-shadow 0.15s ease;
+}
+
+.jp-applicant-card:hover {
+  box-shadow: var(--jp-shadow-sm);
+}
+
+.jp-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--jp-blue-tint);
+  color: var(--jp-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-family: var(--jp-font-display);
+  flex-shrink: 0;
+}
+
+.btn-resume-download {
+  background: var(--jp-blue-tint);
+  color: var(--jp-blue);
+  border: 1px solid var(--jp-blue-tint-2);
+  font-weight: 600;
+  border-radius: var(--jp-radius-sm);
+  font-size: 0.85rem;
+  padding: 0.4rem 0.9rem;
+  transition: all 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.btn-resume-download:hover {
+  background: var(--jp-blue);
+  color: #fff;
+}
+
+.btn-shortlist {
+  background: var(--jp-success-bg);
+  color: var(--jp-success);
+  border: 1px solid transparent;
+  font-weight: 600;
+  border-radius: var(--jp-radius-sm);
+  font-size: 0.85rem;
+  padding: 0.4rem 0.9rem;
+  transition: all 0.15s ease;
+}
+
+.btn-shortlist:hover {
+  background: var(--jp-success);
+  color: #fff;
+}
+
+.btn-reject {
+  background: var(--jp-danger-bg);
+  color: var(--jp-danger);
+  border: 1px solid transparent;
+  font-weight: 600;
+  border-radius: var(--jp-radius-sm);
+  font-size: 0.85rem;
+  padding: 0.4rem 0.9rem;
+  transition: all 0.15s ease;
+}
+
+.btn-reject:hover {
+  background: var(--jp-danger);
+  color: #fff;
+}
+
+/* --------------------------------------------------------------------------
+   Applications — timeline style
+   -------------------------------------------------------------------------- */
+
+.jp-timeline {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.jp-timeline::before {
+  content: "";
+  position: absolute;
+  left: 0.6rem;
+  top: 0.4rem;
+  bottom: 0.4rem;
+  width: 2px;
+  background: var(--jp-border);
+}
+
+.jp-timeline-item {
+  position: relative;
+  margin-bottom: 1.25rem;
+}
+
+.jp-timeline-dot {
+  position: absolute;
+  left: -2rem;
+  top: 1.5rem;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--jp-blue);
+  border: 3px solid var(--jp-blue-tint);
+}
+
+.jp-timeline-dot.success { background: var(--jp-success); }
+.jp-timeline-dot.danger { background: var(--jp-danger); }
+.jp-timeline-dot.warning { background: var(--jp-warning); }
+
+.jp-timeline-card {
+  background: #fff;
+  border: 1px solid var(--jp-border);
+  border-radius: var(--jp-radius-md);
+  box-shadow: var(--jp-shadow-sm);
+  padding: 1.35rem 1.5rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.jp-timeline-card:hover {
+  transform: translateX(4px);
+  box-shadow: var(--jp-shadow-md);
+}
+
+/* --------------------------------------------------------------------------
+   Forms (Post Job / Edit Job)
+   -------------------------------------------------------------------------- */
+
+.jp-form-card {
+  background: #fff;
+  border-radius: var(--jp-radius-lg);
+  box-shadow: var(--jp-shadow-md);
+  padding: 2.25rem;
+}
+
+.jp-form-header {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-bottom: 1.75rem;
+}
+
+.jp-form-header .icon-box {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: var(--jp-blue-tint);
+  color: var(--jp-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+
+.jp-form-card label {
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: var(--jp-navy);
+  margin-bottom: 0.35rem;
+}
+
+.jp-form-card .form-control,
+.jp-form-card .form-select {
+  border-radius: var(--jp-radius-sm);
+  border: 1px solid var(--jp-border);
+  padding: 0.65rem 0.9rem;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.jp-form-card .form-control:focus,
+.jp-form-card .form-select:focus {
+  border-color: var(--jp-blue);
+  box-shadow: 0 0 0 3px var(--jp-blue-tint);
+}
+
+.btn-jp-submit {
+  background: var(--jp-blue);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  border-radius: var(--jp-radius-sm);
+  padding: 0.7rem 1.75rem;
+  transition: all 0.15s ease;
+}
+
+.btn-jp-submit:hover {
+  background: var(--jp-blue-dark);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: var(--jp-shadow-md);
+}
+
+/* --------------------------------------------------------------------------
+   Page header (used on Jobs / MyJobs / Applications)
+   -------------------------------------------------------------------------- */
+
+.jp-page-header {
+  padding: 2.5rem 0 1.75rem;
+}
+
+.jp-page-header h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+/* --------------------------------------------------------------------------
+   Empty states
+   -------------------------------------------------------------------------- */
+
+.jp-empty-state {
+  text-align: center;
+  padding: 3rem 1.5rem;
+  background: #fff;
+  border: 1px dashed var(--jp-border);
+  border-radius: var(--jp-radius-md);
+}
+
+.jp-empty-state i {
+  font-size: 2.5rem;
+  color: var(--jp-slate-light);
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+/* ---------- Toast Notifications ---------- */
+.jp-toast-container {
+  position: fixed;
+  top: 5rem;
+  right: 1.25rem;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  max-width: 360px;
+}
+
+.jp-toast {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  background: #fff;
+  border-radius: var(--jp-radius-sm);
+  box-shadow: var(--jp-shadow-md);
+  padding: 0.85rem 1rem;
+  border-left: 4px solid var(--jp-blue);
+  animation: jp-toast-in 0.25s ease;
+  font-size: 0.92rem;
+}
+
+.jp-toast-success {
+  border-left-color: #17a06d;
+}
+.jp-toast-success i:first-child {
+  color: #17a06d;
+}
+
+.jp-toast-error {
+  border-left-color: #e0393e;
+}
+.jp-toast-error i:first-child {
+  color: #e0393e;
+}
+
+.jp-toast-info i:first-child {
+  color: var(--jp-blue);
+}
+
+.jp-toast-message {
+  flex: 1;
+  color: #1f2937;
+}
+
+.jp-toast-close {
+  background: none;
+  border: none;
+  color: #9ca3af;
+  line-height: 1;
+  padding: 0;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.jp-toast-close:hover {
+  color: #374151;
+}
+
+@keyframes jp-toast-in {
+  from {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ---------- Confirm Modal ---------- */
+.jp-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.55);
+  z-index: 2500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  animation: jp-modal-fade 0.15s ease;
+}
+
+.jp-modal-card {
+  background: #fff;
+  border-radius: var(--jp-radius-md);
+  padding: 2rem;
+  max-width: 380px;
+  width: 100%;
+  text-align: center;
+  box-shadow: var(--jp-shadow-md);
+  animation: jp-modal-pop 0.18s ease;
+}
+
+.jp-modal-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  font-size: 1.6rem;
+}
+
+.jp-modal-icon-danger {
+  background: rgba(224, 57, 62, 0.12);
+  color: #e0393e;
+}
+
+.jp-modal-icon-primary {
+  background: rgba(79, 140, 255, 0.12);
+  color: var(--jp-blue);
+}
+
+@keyframes jp-modal-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes jp-modal-pop {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* ---------- Resume Match (AI-free skill matching) ---------- */
+.jp-match-box {
+  background: #f9fafb;
+  border: 1px solid var(--jp-border);
+  border-radius: var(--jp-radius-sm);
+  padding: 0.85rem 1rem;
+}
+
+.jp-skill-chip {
+  display: inline-block;
+  font-size: 0.78rem;
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  margin: 0.15rem 0.25rem 0.15rem 0;
+}
+
+.jp-skill-chip-good {
+  background: rgba(23, 160, 109, 0.12);
+  color: #0e8a5c;
+}
+
+.jp-skill-chip-missing {
+  background: rgba(224, 57, 62, 0.1);
+  color: #b3282d;
+}
+
+/* ---------- Auth divider (Login/Register "OR" line) ---------- */
+.jp-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #9ca3af;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.jp-divider::before,
+.jp-divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid var(--jp-border);
+}
+
+.jp-divider span {
+  padding: 0 0.85rem;
+}
+
+/* ---------- Profile photo upload ---------- */
+.jp-avatar-upload {
+  position: relative;
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+}
+
+.jp-avatar-photo {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  object-fit: cover;
+  display: block;
+}
+
+.jp-avatar-edit-btn {
+  position: absolute;
+  bottom: -6px;
+  right: -6px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--jp-blue);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  cursor: pointer;
+  border: 2px solid #fff;
+  box-shadow: var(--jp-shadow-sm);
+  transition: transform 0.15s ease;
+}
+
+.jp-avatar-edit-btn:hover {
+  transform: scale(1.1);
+}
+
+/* ---------- Profile photo large preview ---------- */
+.jp-photo-preview-card {
+  background: #fff;
+  border-radius: var(--jp-radius-lg);
+  padding: 2rem;
+  text-align: center;
+  box-shadow: var(--jp-shadow-md);
+  animation: jp-modal-pop 0.18s ease;
+}
+
+.jp-photo-preview-img {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--jp-blue-tint);
+  box-shadow: var(--jp-shadow-md);
+}
+
+/* ---------- Shortlisted celebration banner (My Applications page) ---------- */
+.jp-timeline-card-celebrate {
+  border: 1px solid rgba(23, 160, 109, 0.35);
+  background: linear-gradient(180deg, #ffffff 0%, #f3fbf7 100%);
+}
+
+.jp-celebrate-banner {
+  background: rgba(23, 160, 109, 0.08);
+  border: 1px dashed rgba(23, 160, 109, 0.4);
+  border-radius: var(--jp-radius-sm);
+  padding: 0.75rem 1rem;
+  color: #0e6b47;
+}
+
+.jp-celebrate-banner .bi {
+  color: #0e8a5c;
+  margin-right: 0.35rem;
+}
+
+/* ---------- My Applications: clickable timeline cards ---------- */
+.jp-timeline-card-clickable {
+  cursor: pointer;
+}
