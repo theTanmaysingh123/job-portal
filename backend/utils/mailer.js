@@ -1,7 +1,17 @@
 const nodemailer = require("nodemailer");
 
+// Reuses your Gmail account (via an App Password) to send transactional
+// emails like the signup verification code. Nothing is sent if EMAIL_USER /
+// EMAIL_PASS aren't set — the caller decides how to handle that.
+//
+// NOTE: We use explicit host/port (instead of `service: "gmail"`) with
+// `family: 4` because some hosting platforms (e.g. Render) fail to reach
+// Gmail's SMTP server over IPv6 (ENETUNREACH), even though IPv4 works fine.
 const transporter = nodemailer.createTransport({
-  service: "gmail",
+  host: "smtp.gmail.com",
+  port: 465,
+  secure: true,
+  family: 4,
   auth: {
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASS,
