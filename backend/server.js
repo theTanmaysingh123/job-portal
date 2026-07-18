@@ -2,7 +2,14 @@ const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const path = require("path");
+const dns = require('dns');
 require('dotenv').config();
+
+// Some hosting platforms (e.g. Render) fail to reach certain external
+// services (like Gmail's SMTP server) over IPv6, even though IPv4 works
+// fine. This forces Node's DNS resolver to prefer IPv4 addresses globally,
+// for every outgoing connection this server makes — not just email.
+dns.setDefaultResultOrder('ipv4first');
 
 const app = express();
 

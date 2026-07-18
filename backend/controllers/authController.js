@@ -133,7 +133,7 @@ exports.updateProfile = async (req, res) => {
     const updatedUser = await User.findByIdAndUpdate(
       req.user.id,
       { name, phone, bio, location },
-      { new: true, runValidators: true }
+      { returnDocument: 'after', runValidators: true }
     ).select('-password');
 
     if (!updatedUser) {
@@ -220,6 +220,7 @@ exports.googleAuth = async (req, res) => {
       }
     });
   } catch (error) {
+    console.log('Google auth error:', error);
     res.status(500).json({ message: 'Google authentication failed', error: error.message });
   }
 };
@@ -236,7 +237,7 @@ exports.uploadProfilePhoto = async (req, res) => {
     const updatedUser = await User.findByIdAndUpdate(
       req.user.id,
       { profilePhoto: photoPath },
-      { new: true }
+      { returnDocument: 'after' }
     ).select('-password');
 
     if (!updatedUser) {
